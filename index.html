@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xuefeng Zhu's  Academic Personal Homepage</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2c3e50',
+                        secondary: '#f5f5f5',
+                        accent: '#e67e22',
+                        success: '#27ae60'
+                    },
+                    fontFamily: {
+                        roboto: ['Roboto', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .transition-navbar {
+                transition: all 0.3s ease;
+            }
+            .card-hover {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+            .fade-in {
+                animation: fadeIn 0.8s ease forwards;
+                opacity: 0;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        }
+    </style>
+</head>
+<body class="font-roboto text-gray-800 bg-white">
+    <!-- 顶部导航栏 -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 bg-white z-50 transition-navbar shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-primary font-bold text-xl md:text-2xl">Xuefeng Zhu</div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                <a href="#publications" class="text-gray-600 hover:text-primary transition-colors">Publications</a>
+                <a href="#news" class="text-gray-600 hover:text-primary transition-colors">News</a>
+                <a href="#blog" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                <a href="#cv" class="text-gray-600 hover:text-primary transition-colors">CV</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+            </nav>
+            <button class="md:hidden text-gray-600" id="menu-toggle">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#home" class="text-gray-600 hover:text-primary py-2 transition-colors">Home</a>
+                <a href="#publications" class="text-gray-600 hover:text-primary py-2 transition-colors">Publications</a>
+                <a href="#news" class="text-gray-600 hover:text-primary py-2 transition-colors">News</a>
+                <a href="#blog" class="text-gray-600 hover:text-primary py-2 transition-colors">Blog</a>
+                <a href="#cv" class="text-gray-600 hover:text-primary py-2 transition-colors">CV</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary py-2 transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 pt-28 pb-16">
+        <!-- 个人信息卡片 -->
+        <section id="home" class="mb-16 fade-in" style="animation-delay: 0.1s;">
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8 flex flex-col md:flex-row gap-8">
+                <div class="w-full md:w-1/4 flex justify-center md:justify-start">
+                    <img src="https://picsum.photos/seed/profile/200/200" alt="Academic profile photo of Your Name" class="rounded-full w-40 h-40 object-cover border-4 border-secondary">
+                </div>
+                <div class="w-full md:w-3/4">
+                    <h1 class="text-3xl md:text-4xl font-bold text-primary mb-3">Xuefeng Zhu</h1>
+                    <h2 class="text-xl md:text-2xl text-gray-600 mb-4">Professor @ Dalian University of Technology</h2>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        I am a PhD student specializing in artificial intelligence and machine learning. My research focuses on developing novel algorithms for natural language processing and computer vision applications. I am passionate about bridging the gap between theoretical research and real-world applications.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="mailto:your.email@university.edu" class="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+                            <i class="fa fa-envelope-o"></i>
+                            <span>your.email@university.edu</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+                            <i class="fa fa-google"></i>
+                            <span>Google Scholar</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+                            <i class="fa fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+                            <i class="fa fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+                            <i class="fa fa-file-pdf-o"></i>
+                            <span>CV</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 教育/经历/荣誉 -->
+        <section class="mb-16 fade-in" style="animation-delay: 0.2s;">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 教育 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                    <h2 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <span class="mr-2">🎓</span> Education
+                    </h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold">University Name</h3>
+                            <p class="text-gray-600">PhD in Computer Science</p>
+                            <p class="text-sm text-gray-500">2020 - Present</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">University Name</h3>
+                            <p class="text-gray-600">MSc in Computer Science</p>
+                            <p class="text-sm text-gray-500">2018 - 2020</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">University Name</h3>
+                            <p class="text-gray-600">BSc in Computer Science</p>
+                            <p class="text-sm text-gray-500">2014 - 2018</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 经历 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                    <h2 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <span class="mr-2">💼</span> Experience
+                    </h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold">Research Institute</h3>
+                            <p class="text-gray-600">Research Assistant</p>
+                            <p class="text-sm text-gray-500">2022 - Present</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Tech Company</h3>
+                            <p class="text-gray-600">Machine Learning Intern</p>
+                            <p class="text-sm text-gray-500">Summer 2021</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">University Name</h3>
+                            <p class="text-gray-600">Teaching Assistant</p>
+                            <p class="text-sm text-gray-500">2019 - 2020</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 荣誉 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                    <h2 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <span class="mr-2">🏆</span> Honors
+                    </h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold">Best Paper Award</h3>
+                            <p class="text-gray-600">Top Conference in AI</p>
+                            <p class="text-sm text-gray-500">2023</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Graduate Fellowship</h3>
+                            <p class="text-gray-600">University Research Council</p>
+                            <p class="text-sm text-gray-500">2021 - 2023</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Dean's List</h3>
+                            <p class="text-gray-600">School of Computer Science</p>
+                            <p class="text-sm text-gray-500">2019</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 精选出版物 -->
+        <section id="publications" class="mb-16 fade-in" style="animation-delay: 0.3s;">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-primary">Selected Publications</h2>
+                <a href="publication.html" class="inline-flex items-center gap-1 px-4 py-2 bg-primary text-white rounded hover:bg-primary/90 transition-colors">
+                    <span>更多</span>
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="space-y-6">
+                <!-- 论文1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/4">
+                            <img src="https://picsum.photos/seed/paper1/300/200" alt="Thumbnail of research paper on natural language understanding" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full md:w-3/4 p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <h3 class="text-lg font-semibold">
+                                    <a href="#" class="text-primary hover:text-accent transition-colors">A Novel Approach to Natural Language Understanding</a>
+                                </h3>
+                                <span class="bg-success/20 text-success text-xs px-2 py-1 rounded-full">Spotlight</span>
+                            </div>
+                            <p class="text-gray-700 mb-3">
+                                <span class="font-bold">Your Name</span>, Co-author 1, Co-author 2, Advisor Name
+                            </p>
+                            <p class="text-gray-600 mb-3 text-sm">
+                                In Proceedings of the International Conference on Machine Learning (ICML), 2023
+                            </p>
+                            <p class="text-gray-600 mb-4">
+                                This paper presents a novel framework for natural language understanding that combines transformer models with knowledge graphs to improve contextual understanding and reasoning capabilities.
+                            </p>
+                            <div class="flex gap-3">
+                                <a href="#" class="inline-flex items-center gap-1 px-3 py-1 bg-primary text-white text-sm rounded hover:bg-primary/90 transition-colors">
+                                    <i class="fa fa-file-pdf-o"></i> Paper
+                                </a>
+                                <a href="#" class="inline-flex items-center gap-1 px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded hover:bg-gray-300 transition-colors">
+                                    <i class="fa fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 论文2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/4">
+                            <img src="https://picsum.photos/seed/paper2/300/200" alt="Thumbnail of research paper on computer vision algorithms" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full md:w-3/4 p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <h3 class="text-lg font-semibold">
+                                    <a href="#" class="text-primary hover:text-accent transition-colors">Efficient Algorithms for Computer Vision Tasks</a>
+                                </h3>
+                            </div>
+                            <p class="text-gray-700 mb-3">
+                                Co-author 1, <span class="font-bold">Your Name</span>, Co-author 2, Advisor Name
+                            </p>
+                            <p class="text-gray-600 mb-3 text-sm">
+                                In IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2022
+                            </p>
+                            <p class="text-gray-600 mb-4">
+                                We propose new efficient algorithms for common computer vision tasks that reduce computational complexity while maintaining or improving accuracy compared to state-of-the-art methods.
+                            </p>
+                            <div class="flex gap-3">
+                                <a href="#" class="inline-flex items-center gap-1 px-3 py-1 bg-primary text-white text-sm rounded hover:bg-primary/90 transition-colors">
+                                    <i class="fa fa-file-pdf-o"></i> Paper
+                                </a>
+                                <a href="#" class="inline-flex items-center gap-1 px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded hover:bg-gray-300 transition-colors">
+                                    <i class="fa fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 论文3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-1/4">
+                            <img src="https://picsum.photos/seed/paper3/300/200" alt="Thumbnail of research paper on ML theory and practice" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full md:w-3/4 p-6">
+                            <div class="flex items-center gap-2 mb-2">
+                                <h3 class="text-lg font-semibold">
+                                    <a href="#" class="text-primary hover:text-accent transition-colors">Bridging the Gap Between Theory and Practice in ML</a>
+                                </h3>
+                                <span class="bg-accent/20 text-accent text-xs px-2 py-1 rounded-full">Oral</span>
+                            </div>
+                            <p class="text-gray-700 mb-3">
+                                Advisor Name, <span class="font-bold">Your Name</span>, Co-author 1
+                            </p>
+                            <p class="text-gray-600 mb-3 text-sm">
+                                In Advances in Neural Information Processing Systems (NeurIPS), 2021
+                            </p>
+                            <p class="text-gray-600 mb-4">
+                                This work addresses the challenges of translating theoretical machine learning research into practical applications, with case studies and recommendations for researchers and practitioners.
+                            </p>
+                            <div class="flex gap-3">
+                                <a href="#" class="inline-flex items-center gap-1 px-3 py-1 bg-primary text-white text-sm rounded hover:bg-primary/90 transition-colors">
+                                    <i class="fa fa-file-pdf-o"></i> Paper
+                                </a>
+                                <a href="#" class="inline-flex items-center gap-1 px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded hover:bg-gray-300 transition-colors">
+                                    <i class="fa fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 新闻 -->
+        <section id="news" class="mb-16 fade-in" style="animation-delay: 0.4s;">
+            <h2 class="text-2xl font-bold text-primary mb-6">News</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="timeline space-y-6">
+                    <!-- 2023年新闻 -->
+                    <div class="timeline-year">
+                        <button class="year-toggle w-full flex justify-between items-center text-lg font-semibold text-primary" data-year="2023">
+                            <span>2023</span>
+                            <i class="fa fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="year-content mt-4 space-y-4 pl-4 border-l-2 border-gray-200">
+                            <div class="timeline-item">
+                                <p class="text-gray-700"><span class="font-medium">September 2023:</span> Presented our paper at the top AI conference in Europe.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="text-gray-700"><span class="font-medium">June 2023:</span> Awarded the Best Paper Award at the International Conference on Machine Learning.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="text-gray-700"><span class="font-medium">March 2023:</span> Joined the Research Institute as a visiting researcher.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2022年新闻 -->
+                    <div class="timeline-year">
+                        <button class="year-toggle w-full flex justify-between items-center text-lg font-semibold text-primary" data-year="2022">
+                            <span>2022</span>
+                            <i class="fa fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="year-content mt-4 space-y-4 pl-4 border-l-2 border-gray-200 hidden">
+                            <div class="timeline-item">
+                                <p class="text-gray-700"><span class="font-medium">November 2022:</span> Our paper on natural language processing was accepted to a top-tier journal.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="text-gray-700"><span class="font-medium">August 2022:</span> Received the Graduate Fellowship from the University Research Council.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2021年新闻 -->
+                    <div class="timeline-year">
+                        <button class="year-toggle w-full flex justify-between items-center text-lg font-semibold text-primary" data-year="2021">
+                            <span>2021</span>
+                            <i class="fa fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="year-content mt-4 space-y-4 pl-4 border-l-2 border-gray-200 hidden">
+                            <div class="timeline-item">
+                                <p class="text-gray-700"><span class="font-medium">July 2021:</span> Completed internship at Tech Company, working on computer vision projects.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="text-gray-700"><span class="font-medium">January 2021:</span> Started my PhD program in Computer Science.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-8 fade-in" style="animation-delay: 0.5s;">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Your Name | Built with ❤️</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2', 'shadow');
+                navbar.classList.remove('py-4', 'shadow-sm');
+            } else {
+                navbar.classList.add('py-4', 'shadow-sm');
+                navbar.classList.remove('py-2', 'shadow');
+            }
+        });
+
+        // 移动端菜单切换
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 新闻时间轴展开/收起
+        const yearToggles = document.querySelectorAll('.year-toggle');
+        yearToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // 页面滚动时的淡入动画
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
